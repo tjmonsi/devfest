@@ -1,0 +1,33 @@
+---
+_options:
+  layout: app/layouts/page-layout.static.hbs
+  partials:
+    - app/partials/head-meta-partial.static.hbs
+    - app/partials/head-script-partial.static.hbs
+---
+  <head>
+    {{>head-meta-partial}}
+    {{>head-script-partial}}
+
+    {{#if firebaseConfig}}
+    <script>
+      window.firebaseConfig = {
+        authDomain: '{{firebaseConfig.authDomain}}',
+        databaseUrl: '{{firebaseConfig.databaseUrl}}',
+        apiKey: '{{firebaseConfig.apiKey}}',
+        storageBucket: '{{firebaseConfig.storageBucket}}'
+      }
+    </script>
+    {{/if}}
+  </head>
+
+  <body>
+    {{#each pages}}
+      <link rel="lazy-import" href="/page_components/{{element}}/{{element}}.html" group="{{element}}" />
+    {{/each}}
+    <project-core id="project-core">
+      {{#each pages}}
+        <{{element}} route="{{route}}"></{{element}}>
+      {{/each}}
+    </project-core>
+  </body>
