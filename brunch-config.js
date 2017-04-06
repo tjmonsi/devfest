@@ -10,22 +10,27 @@ exports.files = {
   stylesheets: stylesheets
 };
 
+exports.paths = {
+  watched: ['app', 'images', 'config', 'src']
+}
+
 exports.conventions = {
-  ignored: [/\/_/, /vendor\/(node|j?ruby-.+|bundle)\//, /^app\/bower_components/, /^app\/project_components/]
+  ignored: [/\/_/, /^config/, /vendor\/(node|j?ruby-.+|bundle)\//, /^src\/bower_components/]
 };
 
 exports.plugins = {
   copycat: {
-    "bower_components": ["app/bower_components"],
-    "project_components": ["app/project_components"],
-    "page_components": ["app/page_components"],
+    "bower_components": ["src/bower_components"],
+    "project_components": ["src/project_components"],
+    "page_components": ["src/page_components"],
+    "images": ["images"],
     verbose: false,
     onlyChanged: true
   },
   sass: {
     mode: 'native',
     options: {
-      includePaths: ['project_components']
+      // includePaths: ['project_components']
     },
     debug: 'comments',
     precision: 8,

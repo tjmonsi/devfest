@@ -1,0 +1,56 @@
+---
+name: project-core
+_options:
+  layout: src/templates/layouts/project-components-style-layout.static.hbs
+---
+//
+app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 440px;
+  color: #fff;
+  background-image: url('/images/header.jpg') ;
+  background-position: center center;
+  background-size: cover;
+  --app-header-background-front-layer: #{'{
+    background: -webkit-linear-gradient(top, transparent 0%, transparent 50%, rgba(0,0,0,0.5) 100%);
+  }'};
+  --app-header-background-rear-layer: #{'{
+    background-color: #303f9f;
+  }'};
+}
+
+app-toolbar.tall {
+  height: 400px;
+}
+
+
+[main-title] {
+  font-weight: 300;
+  position: absolute;
+  bottom: 40px;
+  left: 180px;
+  font-size: 45px;
+  margin: 0;
+}
+
+[main-title] {
+  font-weight: 300;
+  position: absolute;
+  bottom: 40px;
+  left: 180px;
+  font-size: 45px;
+  margin: 0;
+}
+
+[condensed-title] i {
+  font-weight: 100;
+  font-style: normal;
+}
+@media (max-width: 639px) {
+  [main-title] {
+    left: 85px;
+  }
+}

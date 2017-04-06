@@ -222,7 +222,7 @@
         if (event.metaKey || event.ctrlKey) {
           return null;
         }
-        var eventPath = Polymer.dom(event).path;
+        var eventPath = event.path;
         var anchor = null;
         for (var i = 0; i < eventPath.length; i++) {
           var element = eventPath[i];

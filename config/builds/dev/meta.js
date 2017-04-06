@@ -1,7 +1,7 @@
-exports.image = 'https://ux-ph-conf-2017.firebaseapp.com/images/assets/bground.jpg';
+exports.image = 'https://devfest.gdgph.org/includes/images/p2.jpg';
 exports.ogType = 'website';
 exports.twitterCard = 'summary_large_image';
-exports.twitterHandle = 'UXPHL';
+exports.twitterHandle = 'gdgphilippines';
 exports.mobileWebAppCapable = 'yes';
 exports.appleMobleWebAppCapable = 'yes';
 exports.appleMobileWebAppStatusBarStyle = 'black-translucent';

@@ -1,31 +1,49 @@
 <!-- Bower Components Dependencies -->
 <link rel="import" href="../../bower_components/polymer/polymer-element.html">
-<link rel="import" href="../../bower_components/polymer/lib/utils/render-status.html">
 
 <!-- Project Components Dependencies -->
 <link rel="import" href="../../project_components/lazy-import/lazy-import-mixin.html">
 <link rel="import" href="../../project_components/project-router/project-router-mixin.html">
 <link rel="import" href="../../project_components/project-router/project-location.html">
 <link rel="import" href="../../project_components/project-router/project-pages.html">
-<link rel="import" href="../../project_components/polymerfire/firebase-app-script.html">
+<link rel="import" href="../../project_components/app-layout/app-header/app-header.html">
+<link rel="import" href="../../project_components/app-layout/app-toolbar/app-toolbar.html">
+<link rel="import" href="../../project_components/app-layout/app-scroll-effects/effects/fade-background.html">
+<link rel="import" href="../../project_components/app-layout/app-scroll-effects/effects/resize-snapped-title.html">
+<link rel="import" href="../../project_components/app-layout/app-scroll-effects/effects/waterfall.html">
+
+<!--<link rel="import" href="../../project_components/polymerfire/firebase-app-script.html">
 <link rel="import" href="../../project_components/polymerfire/firebase-auth-script.html">
 <link rel="import" href="../../project_components/polymerfire/firebase-database-script.html">
-<link rel="import" href="../../project_components/polymerfire/firebase-app.html">
+<link rel="import" href="../../project_components/polymerfire/firebase-app.html">-->
 
 <!-- Style -->
 <link rel="import" href="project-core-styles.html">
 
 <!-- Element Definition -->
 <dom-module id="project-core">
-  <template>
 
-    <firebase-app
+  <template>
+    <style include="project-core-styles"></style>
+
+    <!--<firebase-app
         auth-domain="[[firebaseConfig.authDomain]]"
         database-url="[[firebaseConfig.databaseUrl]]"
         api-key="[[firebaseConfig.apiKey]]"
-        storage-bucket="[[firebaseConfig.storageBucket]]"></firebase-app>
+        storage-bucket="[[firebaseConfig.storageBucket]]"></firebase-app>-->
 
     <project-location route="{{_route}}" path="{{_path}}" query-params="{{queryParams}}"></project-location>
+
+    <app-header condenses fixed
+      effects="waterfall resize-snapped-title fade-background"
+      effects-config='{"resize-snapped-title": {"startsAt": 0.8, "duration": "100ms"}, "fade-background": {"startsAt": 0.8, "endsAt": 0.9}}'>
+      <app-toolbar>
+        <!--<paper-icon-button icon="menu"></paper-icon-button>-->
+        <h4 condensed-title>GiveDirectly</h4>
+        <!--<paper-icon-button icon="search"></paper-icon-button>-->
+      </app-toolbar>
+      <h1 main-title>GiveDirectly</h1>
+    </app-header>
 
     <project-pages
         attr-for-selected="route"
@@ -43,10 +61,6 @@
 
         constructor() {
           super();
-        }
-
-        connectedCallback() {
-          super.connectedCallback();
         }
 
         static get firebaseConfig() {

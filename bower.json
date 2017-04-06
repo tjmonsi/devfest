@@ -1,6 +1,6 @@
 {
-  "name": "madhouse-app",
-  "description": "Madhouse application",
+  "name": "devfest-ph",
+  "description": "GDG Devfest PH application",
   "main": "",
   "authors": [
     "TJ Monserrat"
@@ -12,8 +12,8 @@
     "iron-icon": "PolymerElements/iron-icon#2.0-preview",
     "iron-iconset-svg": "PolymerElements/iron-iconset-svg#2.0-preview",
     "paper-icon-button": "PolymerElements/paper-icon-button#2.0-preview",
-    "polymer": "Polymer/polymer#2.0.0-rc.1",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#1.0.0-rc.4"
+    "polymer": "Polymer/polymer#2.0.0-rc.3",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#1.0.0-rc.5"
   },
   "devDependencies": {
     "web-component-tester": "6.0.0-prerelease.5"
@@ -27,5 +27,8 @@
     "app/assets/bower_components/",
     "test",
     "tests"
-  ]
+  ],
+  "resolutions": {
+    "polymer": "^2.0.0-rc.3"
+  }
 }
